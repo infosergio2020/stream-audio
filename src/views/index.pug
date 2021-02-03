@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  header(style=' background-color: #000;')
+    nav.navbar.navbar-dark.d-flex.justify-content-end
+      .hi(style=' height: 40px')
+  main
+    .container
+      .row.margin-confi
+        .col-md-0.offset-md-0
+          a(href='/admin')
+            button.link-button.btn-warning.px-5(style='border-radius: 5px;') Back
+      .row.margin-oks
+        .col-md-4.offset-md-4
+          h1.font-potta-one(style='border-radius: 15px; color: #fff') OKS
+      .row.my-2
+        .col-md-4.offset-md-4
+          h2.font-lato(style='border-radius: 15px; color: #fff')  Add new song
+      .row
+        .col-md-6.offset-md-3
+          form( action='tracks' enctype='multipart/form-data' method='POST' )
+            .form-group
+              label#nombre.font-lato(style='color: #fff') Name
+              input#nombre.form-control(type="text" name='name' style='background: #e3e3e3; border-radius: 15px;')
+            .form-group
+              input.form-control-file(type='file' name='track' style='color: #fff; background-color:black;')
+            button.btn.btn-warning.font-lato(type="submit") Add song
+          a(href='/tracks/list')
+            button.link-button.btn-warning.font-lato.mt-3(style='border-radius: 5px;') View list ♪♫
+          
+            
+  // comienzo del footer
+  footer.p-2(style='background-color: #000;')
+    .container
+      p.copyright(tabindex='0 ') OtakuSongs
+      p.copyright(tabindex='0 ') Todos los Derechos Reservados 2021 &copy; 
